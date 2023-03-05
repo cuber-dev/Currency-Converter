@@ -76,10 +76,11 @@ body {
 }
 .container select{
   position: relative;
-  padding: 2px;
+  padding: 5px;
   margin: 10px;
   outline:none;
   border-radius: 5px;
+  border: .8px solid black;
   background: none;
 }
 
