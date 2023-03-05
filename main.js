@@ -1,3 +1,18 @@
+
+let string = prompt("Enter the password For using My site : ");
+
+let pass = 'QnV0dGVyZmx5MTQ=';
+let password = btoa(string);
+
+if (pass === password) {
+  console.log("Login successful");
+} else {
+  alert("Invalid password, please try again.");
+  window.location.reload();
+}
+
+
+
 const from = document.getElementById("from");
 const to = document.getElementById("to");
 const amount = document.getElementById('amount');
