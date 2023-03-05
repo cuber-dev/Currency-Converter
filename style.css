@@ -75,7 +75,6 @@ body {
   top: -10px;
 }
 .container select{
-  position: relative;
   padding: 5px;
   margin: 10px;
   outline:none;
