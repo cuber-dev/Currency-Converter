@@ -1,0 +1,121 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+*{
+  margin:0;
+  padding: 0;
+}
+:root{
+  --theme : limegreen;
+}
+.container{
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem; 
+  border: 1px solid #000;
+  border-top : 40px solid black;
+  border-radius: .5rem;
+  height: min(max-content,500px);
+  width: min(300px, 350px);
+}
+.container .heading{
+  position: absolute;
+  top: -35px;
+  color:white;
+  left: 50px;
+}
+.container form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .input{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container input{
+  padding: .8rem;
+  width: 80%;
+  border: .5px solid #000;
+  border-radius: 10px;
+  outline: none;
+}
+
+.container #amount-label{
+  position: absolute;
+  top: 13px;
+  left : 30px;
+  transition: all 150ms linear;
+  background: white;
+  padding: 0 10px;
+}
+
+.container input:focus + #amount-label{
+  top: -10px;
+  left: 25px;
+}
+.container input:valid + #amount-label{
+  left: 25px;
+  top: -10px;
+}
+.container select{
+  position: relative;
+  padding: 2px;
+  margin: 10px;
+  outline:none;
+  border-radius: 5px;
+  background: none;
+}
+
+.container .arrow{
+  transform: rotate(90deg);
+  opacity: 0.6;
+}
+.container input:focus,
+.container select:focus {
+  border: 1px solid var(--theme);
+}
+
+.container #submitBtn{
+  padding: .5rem 1rem;
+  margin: 1rem auto;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: none;
+  letter-spacing: 5px;
+}
+.container #submitBtn:active{
+  background: black;
+  color: white;
+}
+.container #display-box{
+  padding: 5px;
+  border-radius: 3px;
+  margin: 2rem auto 1rem auto ;
+  border: 1px solid var(--theme);
+  overflow-x: auto;
+  flex: 0 0 90%;
+  height: 10px;
+  color: #6A6A6A;
+  line-height: 25px;
+}
+.container #display-box #display{
+  color: black;
+}
