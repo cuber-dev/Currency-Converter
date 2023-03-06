@@ -1,4 +1,3 @@
-
 let string = prompt("Enter the password For using My site : ");
 
 let pass = 'QnV0dGVyZmx5MTQ=';
@@ -31,19 +30,19 @@ function addValues(){
   console.log('sent');
 }
 
-function convert(amount, from, to){
+async function convert(amount, from, to){
   let key = "7d442437dde2ce088c06329a";
   let URL = `https://v6.exchangerate-api.com/v6/${key}/pair/${from}/${to}/${amount}`;
-  let result = fetch(URL);
-  result.then((response) => {
+  let response = await fetch(URL);
+  try{
     if(response.ok){
       console.log('Api request success');
-      return response.json();
+      let data = await response.json();
+      display.textContent = `${data.conversion_result}`;
     }else{
       console.log('Api request failed');
     }
-  }).then((data) => {
-    display.textContent = `${data.conversion_result}`;
-  })
-  .catch((error) => console.log(error));
+  }catch(e){
+    console.log(e);
+  }
 }
