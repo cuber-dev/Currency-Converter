@@ -59,7 +59,7 @@ body {
 
 .container #amount-label{
   position: absolute;
-  top: 13px;
+  top: 11px;
   left : 30px;
   transition: all 150ms linear;
   background: white;
