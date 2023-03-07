@@ -41,8 +41,10 @@ async function convert(amount, from, to){
       display.textContent = `${data.conversion_result}`;
     }else{
       console.log('Api request failed');
+      display.textContent = `NETWORK ERROR`;
     }
   }catch(e){
     console.log(e);
+    display.textContent = `Currency not found`;
   }
 }
