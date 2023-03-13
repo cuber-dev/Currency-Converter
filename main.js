@@ -12,7 +12,7 @@ function addValues(){
   let amount2 = amount.value;
   let from2 = from.options[from.selectedIndex].text;
   let to2 = to.options[to.selectedIndex].text;
-  convert(amount2,from2,to2);
+  convert(Math.floor(amount2),from2,to2);
   console.log('sent');
 }
 
