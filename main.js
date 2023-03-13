@@ -17,7 +17,7 @@ function addValues(){
 }
 
 async function convert(amount, from, to){
-
+  display.textContent = `Wait a Second :)`;
   let URL = `https://currency-converter-api.mirzabits.repl.co/api/?from=${from}&to=${to}&amount=${amount}`;
   let response = await fetch(URL);
   try{
