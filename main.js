@@ -1,17 +1,3 @@
-let string = prompt("Enter the password For using My site : ");
-
-let pass = 'QnV0dGVyZmx5MTQ=';
-let password = btoa(string);
-
-if (pass === password) {
-  console.log("Login successful");
-} else {
-  alert("Invalid password, please try again.");
-  window.location.reload();
-}
-
-
-
 const from = document.getElementById("from");
 const to = document.getElementById("to");
 const amount = document.getElementById('amount');
@@ -31,14 +17,14 @@ function addValues(){
 }
 
 async function convert(amount, from, to){
-  let key = "7d442437dde2ce088c06329a";
-  let URL = `https://v6.exchangerate-api.com/v6/${key}/pair/${from}/${to}/${amount}`;
+
+  let URL = `https://currency-converter-api.mirzabits.repl.co/api/?from=${from}&to=${to}&amount=${amount}`;
   let response = await fetch(URL);
   try{
     if(response.ok){
       console.log('Api request success');
       let data = await response.json();
-      display.textContent = `${data.conversion_result}`;
+      display.textContent = `${data.final_converted_amount}`;
     }else{
       console.log('Api request failed');
       display.textContent = `NETWORK ERROR`;
