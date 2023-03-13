@@ -13,6 +13,25 @@ body {
 }
 :root{
   --theme : limegreen;
+  --black: #000;
+  --white: #fff;
+}
+#theme-btn{
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding:5px 6px;
+  font-size: 30px;
+  border-radius: 50%;
+  color: var(--black);
+}
+.dark-theme{
+  background: black;
+}
+@media (max-width: 764px) {
+  #theme-btn {
+    font-size: 20px;
+  }
 }
 .container{
   position: relative;
@@ -22,16 +41,18 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem 1rem; 
-  border: 1px solid #000;
-  border-top : 40px solid black;
+  border: 1px solid var(--black);
+  border-top : 40px solid var(--black);
+  background: var(--white);
   border-radius: .5rem;
   height: min(max-content,500px);
   width: min(300px, 350px);
+  z-index: 5;
 }
 .container .heading{
   position: absolute;
   top: -35px;
-  color:white;
+  color: var(--white);
   left: 50px;
 }
 .container form{
@@ -41,18 +62,20 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  color: var(--black);
 }
 .container .input{
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 .container input{
   padding: .8rem;
   width: 80%;
-  border: .5px solid #000;
+  border: .5px solid var(--black);
   border-radius: 10px;
   outline: none;
 }
@@ -63,46 +86,55 @@ body {
   left : 30px;
   transition: all 150ms linear;
   background: white;
-  padding: 0 10px;
+  padding: 0 5px;
+  border-radius: 5px;
 }
 
 .container input:focus + #amount-label{
-  top: -10px;
+  top: -15px;
   left: 25px;
 }
 .container input:valid + #amount-label{
   left: 25px;
-  top: -10px;
+  top: -15px;
 }
 .container select{
   padding: 5px;
   margin: 10px;
   outline:none;
   border-radius: 5px;
-  border: .8px solid black;
+  border: .8px solid var(--black);
   background: none;
+  color: var(--black);
 }
 
 .container .arrow{
   transform: rotate(90deg);
   opacity: 0.6;
+  color: var(--black);
 }
 .container input:focus,
 .container select:focus {
   border: 1px solid var(--theme);
 }
+.container input:focus+#amount-label {
+  border-top: 1px solid var(--theme);
+  border-right: 1px solid var(--theme);
+  border-left: 1px solid var(--theme);
 
+}
 .container #submitBtn{
   padding: .5rem 1rem;
   margin: 1rem auto;
   font-size: 16px;
-  border: 1px solid black;
+  border: 1px solid var(--black);
+  color: var(--black);
   border-radius: 10px;
   background: none;
   letter-spacing: 5px;
 }
 .container #submitBtn:active{
-  background: black;
+  background: var(--black);
   color: white;
 }
 .container #display-box{
@@ -117,5 +149,5 @@ body {
   line-height: 25px;
 }
 .container #display-box #display{
-  color: black;
+  color: var(--black);
 }

@@ -1,3 +1,25 @@
+const root = document.documentElement;
+
+const themeBtn = document.getElementById('theme-btn');
+
+//Body -theme
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  themeBtn.classList.toggle('bi-moon-stars');
+  if (document.body.classList.contains('dark-theme')) {
+    root.style.setProperty('--theme-2', 'white');
+    root.style.setProperty('--white', 'black');
+    root.style.setProperty('--black', 'white');
+
+  } else {
+    root.style.setProperty('--theme-2', 'black');
+    root.style.setProperty('--white', 'white');
+    root.style.setProperty('--black', 'black');
+
+  }
+});
+
+
 const from = document.getElementById("from");
 const to = document.getElementById("to");
 const amount = document.getElementById('amount');
