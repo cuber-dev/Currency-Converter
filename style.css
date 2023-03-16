@@ -137,7 +137,7 @@ body {
   background: var(--black);
   color: white;
 }
-.container #display-box{
+.container .result-container{
   padding: 5px;
   border-radius: 3px;
   margin: 2rem auto 1rem auto ;
@@ -147,7 +147,18 @@ body {
   height: 10px;
   color: #6A6A6A;
   line-height: 25px;
+  font-size: 16px;
 }
-.container #display-box #display{
-  color: var(--black);
+.container .result-displayer{
+  font-size: 18px;
+}
+.container .success{
+  color: #000000;
+  background: #D4FFDE;
+  border: 1px solid #DEFFE6;
+}
+.container .error{
+  color: #FFFFFF;
+  background: #E67520;
+  border: 1px solid #E5852B;
 }

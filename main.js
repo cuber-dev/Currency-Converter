@@ -24,7 +24,8 @@ const from = document.getElementById("from");
 const to = document.getElementById("to");
 const amount = document.getElementById('amount');
 const form = document.querySelector('form');
-const display = document.getElementById('display');
+const displayContainer = document.getElementById('result-container');
+const display = document.getElementById('result-displayer');
 
 
 form.addEventListener('submit',addValues);
@@ -46,13 +47,24 @@ async function convert(amount, from, to){
     if(response.ok){
       console.log('Api request success');
       let data = await response.json();
+      if(data.final_converted_amount === undefined || data.final_converted_amount === null){
+        display.textContent = `Invalid amount`;
+        displayContainer.classList.add('error');
+        return '';
+      }
+      displayContainer.classList.remove('error');
+      
+      displayContainer.classList.add('success');
       display.textContent = `${data.final_converted_amount}`;
     }else{
       console.log('Api request failed');
+      displayContainer.classList.add('error');
+
       display.textContent = `NETWORK ERROR`;
     }
   }catch(e){
     console.log(e);
+    displayContainer.classList.add('error');
     display.textContent = `Currency not found`;
   }
 }
