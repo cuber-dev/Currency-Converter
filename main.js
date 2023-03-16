@@ -48,7 +48,7 @@ async function convert(amount, from, to){
       console.log('Api request success');
       let data = await response.json();
       if(data.final_converted_amount === undefined || data.final_converted_amount === null){
-        display.textContent = `Invalid amount`;
+        display.textContent = `Invalid Input`;
         displayContainer.classList.add('error');
         return '';
       }
