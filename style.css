@@ -91,12 +91,12 @@ body {
 }
 
 .container input:focus + #amount-label{
-  top: -15px;
+  top: -10px;
   left: 25px;
 }
 .container input:valid + #amount-label{
+  top: -10px;
   left: 25px;
-  top: -15px;
 }
 .container select{
   padding: 5px;
@@ -116,12 +116,6 @@ body {
 .container input:focus,
 .container select:focus {
   border: 1px solid var(--theme);
-}
-.container input:focus+#amount-label {
-  border-top: 1px solid var(--theme);
-  border-right: 1px solid var(--theme);
-  border-left: 1px solid var(--theme);
-
 }
 .container #submitBtn{
   padding: .5rem 1rem;
